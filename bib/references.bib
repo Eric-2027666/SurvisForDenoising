@@ -1,0 +1,166 @@
+@article{ParkJuhyung2022CSMi,
+issn = {2331-8422},
+abstract = {Denoising of magnetic resonance images is beneficial in improving the quality of low signal-to-noise ratio images. Recently, denoising using deep neural networks has demonstrated promising results. Most of these networks, however, utilize supervised learning, which requires large training images of noise-corrupted and clean image pairs. Obtaining training images, particularly clean images, is expensive and time-consuming. Hence, methods such as Noise2Noise (N2N) that require only pairs of noise-corrupted images have been developed to reduce the burden of obtaining training datasets. In this study, we propose a new self-supervised denoising method, Coil2Coil (C2C), that does not require the acquisition of clean images or paired noise-corrupted images for training. Instead, the method utilizes multichannel data from phased-array coils to generate training images. First, it divides and combines multichannel coil images into two images, one for input and the other for label. Then, they are processed to impose noise independence and sensitivity normalization such that they can be used for the training images of N2N. For inference, the method inputs a coil-combined image (e.g., DICOM image), enabling a wide application of the method. When evaluated using synthetic noise-added images, C2C shows the best performance against several self-supervised methods, reporting comparable outcomes to supervised methods. When testing the DICOM images, C2C successfully denoised real noise without showing structure-dependent residuals in the error maps. Because of the significant advantage of not requiring additional scans for clean or paired images, the method can be easily utilized for various clinical applications.},
+journal = {arXiv.org},
+publisher = {Cornell University Library, arXiv.org},
+year = {2022},
+title = {Coil2Coil: Self-supervised MR image denoising using phased-array coil images},
+copyright = {2022. This work is published under http://creativecommons.org/licenses/by/4.0/ (the “License”). Notwithstanding the ProQuest Terms and Conditions, you may use this content in accordance with the terms of the License.},
+language = {eng},
+address = {Ithaca},
+author = {Park, Juhyung and Park, Dongwon and Shin, Hyeong-Geol and Eun-Jung, Choi and An, Hongjun and Kim, Minjun and Shin, Dongmyung and Se Young Chun and Lee, Jongho},
+keywords = {Arrays ; Artificial neural networks ; Image acquisition ; Image quality ; Machine learning ; Magnetic resonance imaging ; Medical imaging ; Noise reduction ; Noise sensitivity ; Signal quality ; Signal to noise ratio ; Training},
+}
+
+@article{HuangTao2021NSDf,
+issn = {2331-8422},
+abstract = {In the last few years, image denoising has benefited a lot from the fast development of neural networks. However, the requirement of large amounts of noisy-clean image pairs for supervision limits the wide use of these models. Although there have been a few attempts in training an image denoising model with only single noisy images, existing self-supervised denoising approaches suffer from inefficient network training, loss of useful information, or dependence on noise modeling. In this paper, we present a very simple yet effective method named Neighbor2Neighbor to train an effective image denoising model with only noisy images. Firstly, a random neighbor sub-sampler is proposed for the generation of training image pairs. In detail, input and target used to train a network are images sub-sampled from the same noisy image, satisfying the requirement that paired pixels of paired images are neighbors and have very similar appearance with each other. Secondly, a denoising network is trained on sub-sampled training pairs generated in the first stage, with a proposed regularizer as additional loss for better performance. The proposed Neighbor2Neighbor framework is able to enjoy the progress of state-of-the-art supervised denoising networks in network architecture design. Moreover, it avoids heavy dependence on the assumption of the noise distribution. We explain our approach from a theoretical perspective and further validate it through extensive experiments, including synthetic experiments with different noise distributions in sRGB space and real-world experiments on a denoising benchmark dataset in raw-RGB space.},
+journal = {arXiv.org},
+publisher = {Cornell University Library, arXiv.org},
+year = {2021},
+title = {Neighbor2Neighbor: Self-Supervised Denoising from Single Noisy Images},
+copyright = {2021. This work is published under http://arxiv.org/licenses/nonexclusive-distrib/1.0/ (the “License”). Notwithstanding the ProQuest Terms and Conditions, you may use this content in accordance with the terms of the License.},
+language = {eng},
+address = {Ithaca},
+author = {Huang, Tao and Li, Songjiang and Xu, Jia and Lu, Huchuan and Liu, Jianzhuang},
+keywords = {Computer architecture ; Dependence ; Experiments ; Neural networks ; Noise ; Noise reduction ; Training},
+}
+
+@article{ChaSungmin2021GGNL,
+issn = {2331-8422},
+abstract = {We tackle a challenging blind image denoising problem, in which only single distinct noisy images are available for training a denoiser, and no information about noise is known, except for it being zero-mean, additive, and independent of the clean image. In such a setting, which often occurs in practice, it is not possible to train a denoiser with the standard discriminative training or with the recently developed Noise2Noise (N2N) training; the former requires the underlying clean image for the given noisy image, and the latter requires two independently realized noisy image pair for a clean image. To that end, we propose GAN2GAN (Generated-Artificial-Noise to Generated-Artificial-Noise) method that first learns a generative model that can 1) simulate the noise in the given noisy images and 2) generate a rough, noisy estimates of the clean images, then 3) iteratively trains a denoiser with subsequently synthesized noisy image pairs (as in N2N), obtained from the generative model. In results, we show the denoiser trained with our GAN2GAN achieves an impressive denoising performance on both synthetic and real-world datasets for the blind denoising setting; it almost approaches the performance of the standard discriminatively-trained or N2N-trained models that have more information than ours, and it significantly outperforms the recent baseline for the same setting, \textit{e.g.}, Noise2Void, and a more conventional yet strong one, BM3D. The official code of our method is available at https://github.com/csm9493/GAN2GAN.},
+journal = {arXiv.org},
+publisher = {Cornell University Library, arXiv.org},
+year = {2021},
+title = {GAN2GAN: Generative Noise Learning for Blind Denoising with Single Noisy Images},
+copyright = {2021. This work is published under http://arxiv.org/licenses/nonexclusive-distrib/1.0/ (the “License”). Notwithstanding the ProQuest Terms and Conditions, you may use this content in accordance with the terms of the License.},
+language = {eng},
+address = {Ithaca},
+author = {Cha, Sungmin and Park, Taeeon and Kim, Byeongjoon and Baek, Jongduk and Moon, Taesup},
+keywords = {Computer simulation ; Iterative methods ; Noise ; Noise reduction ; Training},
+}
+
+@article{KrullAlexander2020PNUC,
+issn = {2624-9898},
+abstract = {Today, Convolutional Neural Networks (CNNs) are the leading method for image denoising. They are traditionally trained on pairs of images, which are often hard to obtain for practical applications. This motivates self-supervised training methods such as Noise2Void~(N2V) that operate on single noisy images. Self-supervised methods are, unfortunately, not competitive with models trained on image pairs. Here, we present 'Probabilistic Noise2Void' (PN2V), a method to train CNNs to predict per-pixel intensity distributions. Combining these with a suitable description of the noise, we obtain a complete probabilistic model for the noisy observations and true signal in every pixel. We evaluate PN2V on publicly available microscopy datasets, under a broad range of noise regimes, and achieve competitive results with respect to supervised state-of-the-art methods.},
+journal = {Frontiers in computer science (Lausanne)},
+volume = {2},
+publisher = {Cornell University Library, arXiv.org},
+year = {2020},
+title = {Probabilistic Noise2Void: Unsupervised Content-Aware Denoising},
+copyright = {2019. This work is published under http://arxiv.org/licenses/nonexclusive-distrib/1.0/ (the “License”). Notwithstanding the ProQuest Terms and Conditions, you may use this content in accordance with the terms of the License.},
+language = {eng},
+address = {Ithaca},
+author = {Krull, Alexander and Vičar, Tomáš and Prakash, Mangal and Lalit, Manan and Jug, Florian},
+keywords = {Artificial neural networks ; CARE ; deep learning ; denoising ; microscopy data ; Noise reduction ; Pixels ; probabilistic ; Probabilistic methods ; Probabilistic models},
+}
+
+@article{TianXuanyu2022NLtD,
+issn = {2331-8422},
+abstract = {Fluorescence microscopy is a key driver to promote discoveries of biomedical research. However, with the limitation of microscope hardware and characteristics of the observed samples, the fluorescence microscopy images are susceptible to noise. Recently, a few self-supervised deep learning (DL) denoising methods have been proposed. However, the training efficiency and denoising performance of existing methods are relatively low in real scene noise removal. To address this issue, this paper proposed self-supervised image denoising method Noise2SR (N2SR) to train a simple and effective image denoising model based on single noisy observation. Our Noise2SR denoising model is designed for training with paired noisy images of different dimensions. Benefiting from this training strategy, Noise2SR is more efficiently self-supervised and able to restore more image details from a single noisy observation. Experimental results of simulated noise and real microscopy noise removal show that Noise2SR outperforms two blind-spot based self-supervised deep learning image denoising methods. We envision that Noise2SR has the potential to improve more other kind of scientific imaging quality.},
+journal = {arXiv.org},
+publisher = {Cornell University Library, arXiv.org},
+year = {2022},
+title = {Noise2SR: Learning to Denoise from Super-Resolved Single Noisy Fluorescence Image},
+copyright = {2022. This work is published under http://arxiv.org/licenses/nonexclusive-distrib/1.0/ (the “License”). Notwithstanding the ProQuest Terms and Conditions, you may use this content in accordance with the terms of the License.},
+language = {eng},
+address = {Ithaca},
+author = {Tian, Xuanyu and Wu, Qing and Wei, Hongjiang and Zhang, Yuyao},
+keywords = {Deep learning ; Fluorescence ; Image restoration ; Microscopy ; Noise reduction ; Training},
+}
+
+@article{LiuYukun2023GRAU,
+issn = {2072-4292},
+abstract = {With the great breakthrough of supervised learning in the field of denoising, more and more works focus on end-to-end learning to train denoisers. In practice, however, it can be very challenging to obtain labels in support of this approach. The premise of this method is effective is that there is certain data support, but in practice, it is particularly difficult to obtain labels in the training data. Several unsupervised denoisers have emerged in recent years; however, to ensure their effectiveness, the noise model must be determined in advance, which limits the practical use of unsupervised denoising.n addition, obtaining inaccurate noise prior to noise estimation algorithms leads to low denoising accuracy. Therefore, we design a more practical denoiser that requires neither clean images as training labels nor noise model assumptions. Our method also needs the support of the noise model; the difference is that the model is generated by a residual image and a random mask during the network training process, and the input and target of the network are generated from a single noisy image and the noise model. At the same time, an unsupervised module and a pseudo supervised module are trained. The extensive experiments demonstrate the effectiveness of our framework and even surpass the accuracy of supervised denoising.},
+journal = {Remote sensing (Basel, Switzerland)},
+pages = {364},
+volume = {15},
+publisher = {MDPI AG},
+number = {2},
+year = {2023},
+title = {Generative Recorrupted-to-Recorrupted: An Unsupervised Image Denoising Network for Arbitrary Noise Distribution},
+copyright = {2023 by the authors. Licensee MDPI, Basel, Switzerland. This article is an open access article distributed under the terms and conditions of the Creative Commons Attribution (CC BY) license (https://creativecommons.org/licenses/by/4.0/). Notwithstanding the ProQuest Terms and Conditions, you may use this content in accordance with the terms of the License.},
+language = {eng},
+address = {Basel},
+author = {Liu, Yukun and Wan, Bowen and Shi, Daming and Cheng, Xiaochun},
+keywords = {Algorithms ; Deep learning ; Effectiveness ; image denoising network ; Labels ; Methods ; Modules ; Neural networks ; Noise ; Noise reduction ; pseudo supervised ; Supervised learning ; Training ; unsupervised},
+}
+
+
+@article{WangZejin2022BSID,
+issn = {2331-8422},
+abstract = {Real noisy-clean pairs on a large scale are costly and difficult to obtain. Meanwhile, supervised denoisers trained on synthetic data perform poorly in practice. Self-supervised denoisers, which learn only from single noisy images, solve the data collection problem. However, self-supervised denoising methods, especially blindspot-driven ones, suffer sizable information loss during input or network design. The absence of valuable information dramatically reduces the upper bound of denoising performance. In this paper, we propose a simple yet efficient approach called Blind2Unblind to overcome the information loss in blindspot-driven denoising methods. First, we introduce a global-aware mask mapper that enables global perception and accelerates training. The mask mapper samples all pixels at blind spots on denoised volumes and maps them to the same channel, allowing the loss function to optimize all blind spots at once. Second, we propose a re-visible loss to train the denoising network and make blind spots visible. The denoiser can learn directly from raw noise images without losing information or being trapped in identity mapping. We also theoretically analyze the convergence of the re-visible loss. Extensive experiments on synthetic and real-world datasets demonstrate the superior performance of our approach compared to previous work. Code is available at https://github.com/demonsjin/Blind2Unblind.},
+journal = {arXiv.org},
+publisher = {Cornell University Library, arXiv.org},
+year = {2022},
+title = {Blind2Unblind: Self-Supervised Image Denoising with Visible Blind Spots},
+copyright = {2022. This work is published under http://arxiv.org/licenses/nonexclusive-distrib/1.0/ (the “License”). Notwithstanding the ProQuest Terms and Conditions, you may use this content in accordance with the terms of the License.},
+language = {eng},
+address = {Ithaca},
+author = {Wang, Zejin and Liu, Jiazheng and Li, Guoqing and Han, Hua},
+keywords = {Data collection ; Network design ; Noise reduction ; Upper bounds},
+}
+
+@inproceedings{wang2022self2align,
+  title={Self2Align: a self-supervised denoising framework for single-scene images},
+  author={Wang, Jian},
+  booktitle={Second International Conference on Advanced Algorithms and Signal Image Processing (AASIP 2022)},
+  volume={12475},
+  pages={46--55},
+  year={2022},
+  organization={SPIE}
+}
+
+@article{JungWoojin2023MNsd,
+issn = {1432-1084},
+abstract = {Objectives
+The study aimed to develop a deep neural network (DNN)–based noise reduction and image quality improvement by only using routine clinical scans and evaluate its performance in 3D high-resolution MRI.
+Methods
+This retrospective study included T1-weighted magnetization-prepared rapid gradient-echo (MP-RAGE) images from 185 clinical scans: 135 for DNN training, 11 for DNN validation, 20 for qualitative evaluation, and 19 for quantitative evaluation. Additionally, 18 vessel wall imaging (VWI) data were included to evaluate generalization. In each scan of the DNN training set, two noise-independent images were generated from the k-space data, resulting in an input-label pair. 2.5D U-net architecture was utilized for the DNN model. Qualitative evaluation between conventional MP-RAGE and DNN-based MP-RAGE was performed by two radiologists in image quality, fine structure delineation, and lesion conspicuity. Quantitative evaluation was performed with full sampled data as a reference by measuring quantitative error metrics and volumetry at 7 different simulated noise levels. DNN application on VWI was evaluated by two radiologists in image quality.
+Results
+Our DNN-based MP-RAGE outperformed conventional MP-RAGE in all image quality parameters (average scores = 3.7 vs. 4.9,
+p
+< 0.001). In the quantitative evaluation, DNN showed better error metrics (
+p
+< 0.001) and comparable (
+p
+> 0.09) or better (
+p
+< 0.02) volumetry results than conventional MP-RAGE. DNN application to VWI also revealed improved image quality (3.5 vs. 4.6,
+p
+< 0.001).
+Conclusion
+The proposed DNN model successfully denoises 3D MR image and improves its image quality by using routine clinical scans only.
+Key Points
+• Our deep learning framework successfully improved conventional 3D high-resolution MRI in all image quality parameters, fine structure delineation, and lesion conspicuity.
+• Compared to conventional MRI, the proposed deep neural network-based MRI revealed better quantitative error metrics and comparable or better volumetry results.
+• Deep neural network application to 3D MRI whose pulse sequences and parameters were different from the training data showed improvement in image quality, revealing the potential to generalize on various clinical MRI.},
+journal = {European radiology},
+pages = {2686--2698},
+volume = {33},
+publisher = {Springer Berlin Heidelberg},
+number = {4},
+year = {2023},
+title = {MR-self Noise2Noise: self-supervised deep learning–based image quality improvement of submillimeter resolution 3D MR images},
+copyright = {The Author(s), under exclusive licence to European Society of Radiology 2022. Springer Nature or its licensor (e.g. a society or other partner) holds exclusive rights to this article under a publishing agreement with the author(s) or other rightsholder(s); author self-archiving of the accepted manuscript version of this article is solely governed by the terms of such publishing agreement and applicable law.},
+language = {eng},
+address = {Berlin/Heidelberg},
+author = {Jung, Woojin and Lee, Hyun-Soo and Seo, Minkook and Nam, Yoonho and Choi, Yangsean and Shin, Na-Young and Ahn, Kook-Jin and Kim, Bum-soo and Jang, Jinhee},
+keywords = {Artificial neural networks ; Biomedical engineering ; Conspicuity ; Deep Learning ; Delineation ; Diagnostic Radiology ; Error analysis ; Evaluation ; Fine structure ; High resolution ; Humans ; Image Processing Computer-Assisted - methods ; Image quality ; Image resolution ; Imaging ; Imaging Informatics and Artificial Intelligence ; Imaging Three-Dimensional - methods ; Internal Medicine ; Interventional Radiology ; Lesions ; Machine learning ; Magnetic resonance imaging ; Magnetic Resonance Imaging - methods ; Magnetization ; Mathematical models ; Medicine ; Medicine & Public Health ; Neural networks ; Neuroradiology ; Noise control ; Noise levels ; Noise reduction ; Parameters ; Performance evaluation ; Quality control ; Quality Improvement ; Quality management ; Quantitative analysis ; Radiology ; Retrospective Studies ; Three dimensional models ; Training ; Ultrasound ; Ultrastructure},
+}
+
+@article{ZhangDan2023SIDf,
+issn = {2169-3536},
+abstract = {In recent years, the development of deep learning has been pushing image denoising to a new level. Among them, self-supervised denoising is increasingly popular because it does not require any prior knowledge. Most of the existing self-supervised methods are based on convolutional neural networks (CNN), which are restricted by the locality of the receptive field and would cause color shifts or textures loss. In this paper, we propose a novel Denoise Transformer for real-world image denoising, which is mainly constructed with Context-aware Denoise Transformer (CADT) units and Secondary Noise Extractor (SNE) block. CADT is designed as a dual-branch structure, where the global branch uses a window-based Transformer encoder to extract the global information, while the local branch focuses on the extraction of local features with small receptive field. By incorporating CADT as basic components, we build a hierarchical network to directly learn the noise distribution information through residual learning and obtain the first stage denoised output. Then, we design SNE in low computation for secondary global noise extraction. Finally the blind spots are collected from the Denoise Transformer output and reconstructed, forming the final denoised image. Extensive experiments on the real-world SIDD benchmark achieve 50.62/0.990 for PSNR/SSIM, which is competitive with the current state-of-the-art method and only 0.17/0.001 lower. Visual comparisons on public sRGB, Raw-RGB and greyscale datasets prove that our proposed Denoise Transformer has a competitive performance, especially on blurred textures and low-light images, without using additional knowledge, e.g., noise level or noise type, regarding the underlying unknown noise.},
+journal = {IEEE access},
+pages = {14340--14349},
+volume = {11},
+publisher = {The Institute of Electrical and Electronics Engineers, Inc. (IEEE)},
+year = {2023},
+title = {Self-Supervised Image Denoising for Real-World Images With Context-Aware Transformer},
+copyright = {Copyright The Institute of Electrical and Electronics Engineers, Inc. (IEEE) 2023},
+language = {eng},
+address = {Piscataway},
+author = {Zhang, Dan and Zhou, Fangfang},
+keywords = {Artificial neural networks ; Coders ; Context ; Deep learning ; dual-branch ; Feature extraction ; Image denoising ; Machine learning ; Noise levels ; Noise reduction ; real-world ; self-supervised ; transformer ; Transformers},
+}
